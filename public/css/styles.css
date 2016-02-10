@@ -1,3 +1,59 @@
+@media (max-width: 480px) {
+  #logo {
+    font-size: 2.2rem;
+  }
+}
+
 body {
-  background-color: lightblue;
+  background-color: black;
+  background-image: url('/images/dark-grey-bg.jpg');
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+#logo {
+  position: absolute;
+  left: 15%;
+  font-family: 'Freckle Face', cursive;
+  color: rgba(170, 140, 240, 0.6);
+  transform: rotate(-4deg);
+  font-size: 4.5rem;
+  text-shadow: 1px 1px 1px rgba(100, 70, 140, .3);
+}
+
+.circle-btn {
+  display: inline-block;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 1.5rem;
+}
+.circle-btn:hover {
+  cursor: pointer;
+}
+.circle-btn h5 {
+  color: rgba(250, 248, 252, .8);
+  font-size: 1.7rem;
+  margin: 20% 25%;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+.signup-btn {
+  background-color: rgba(153, 215, 232, .2);
+  transition: background-color .35s;
+}
+.signup-btn:hover {
+  background-color: rgba(153, 215, 232, .6);
+}
+.login-btn {
+  background-color: rgba(215, 232, 153, .2);
+  transition: background-color .35s;
+}
+.login-btn:hover {
+  background-color: rgba(215, 232, 153, .6);
 }
