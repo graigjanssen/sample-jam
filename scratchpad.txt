@@ -1,15 +1,17 @@
 BACKLOG
 
-- Record audio
-  - Active/Inactive classes on record button
-- Let user choose where audio will go
-  - On record, grab select.val from dropdown
-- Correctly route audio
-  - Maybe each module should already have a hidden <audio> element, just modify its source.
-- Keyboard listeners on modules
-  - Quick spike on keypress event to determine keycodes
-- Clear module
+XXX Record audio
+  XXX Active/Inactive classes on record button
+XXX Let user choose where audio will go
+  XXX On record, grab select.val from dropdown
+XXX Correctly route audio
+  XXX Maybe each module should already have a hidden <audio> element, just modify its source.
+XXX Keyboard listeners on modules
+  XXX Quick spike on keypress event to determine keycodes
+XXX Clear module
+  XXX CSS hover transition on clear button
 - Click listeners on modules
+  Use ElementChild??
 - Color animation on modules
 - Recording/playback optimization
   - Don't want to hear button click, playing the 'instrument' needs to feel good.
@@ -22,3 +24,15 @@ IF ALL OF THE ABOVE IS HAPPENING...
 IF NO TIME
 
 - Lose the user buttons!
+
+
+THOUGHTS ON SAMPLER BEHAVIOR
+
+When a module button is clicked OR corresponding key is pressed...
+  - Play that module's audio
+  - Change that button's class so it 'lights up' in a badass way
+
+  KEYPRESSES
+  - Object with keyCodes as keys, mod1-mod8 as values???
+  - On keypress, check if e.keyCode matches one from object
+  - If it does, do play and class change (with setTimeout to change back)

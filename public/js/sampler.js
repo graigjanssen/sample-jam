@@ -1,11 +1,33 @@
-function bs(){
+var keyMap = {
+  97: '#mod1',
+  115: '#mod2',
+  100: '#mod3',
+  102: '#mod4',
+  106: '#mod5',
+  107: '#mod6',
+  108: '#mod7',
+  59:  '#mod8'
+};
+function triggerSampler(samplerModule){
+  $(samplerModule).get(0).play();
+}
+
+function setKeyboardListener(){
   $(window).on('keypress', function(e){
-    if (e.keyCode === 97){
-      $('#mod1').get(0).play();
+    var keyCode = e.keyCode;
+    if (keyMap[keyCode]){
+      triggerSampler(keyMap[keyCode]);
     }
+  });
+}
+function setClearListener(){
+  $('.mod-clr').click(function(e){
+    var $moduleAudio = $(e.currentTarget.previousElementSibling.firstElementChild);
+    $moduleAudio.attr('src', '');
   });
 }
 
 $(function(){
-  bs();
+  setKeyboardListener();
+  setClearListener();
 });

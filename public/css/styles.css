@@ -88,6 +88,7 @@ header {
   height: 5rem;
 }
 .rec-btn {
+  display: inline-block;
   width: 25%;
   height: 85%;
   margin-top: 1.8%;
@@ -121,7 +122,21 @@ header {
   padding-top: 5%;
   padding-left: 15%;
 }
+.rec-dropdown {
+  display: inline-block;
+}
+.rec-dropdown select {
+  display: inline-block;
+  margin-left: 2rem;
+  width: 80%;
+  background: rgba(225,225,225,.6);
+  font-size: 1.5rem;
+  border: 0;
+}
 
+#dropdown {
+  background-color: white;
+}
   /* SAMPLER */
 
 #sampler {
@@ -161,6 +176,13 @@ header {
   margin-left: 2%;
   background-color: rgba(200, 195, 150, .2);
   border-radius: 40%;
+  box-shadow: 0;
+  transition: background-color .2s, box-shadow .2s;
+}
+.mod-clr:hover {
+  cursor: pointer;
+  background-color: rgba(230, 220, 150, .8);
+  box-shadow: 0 0 8px 3px rgba(100, 100, 80, .8);
 }
 .clrtxt {
   padding-top: 12%;
