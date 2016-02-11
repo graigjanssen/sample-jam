@@ -18,18 +18,24 @@ header {
 }
 #logo {
   position: absolute;
-  left: 15%;
+  margin-top: 1rem;
+  left: 12%;
   font-family: 'Freckle Face', cursive;
-  color: rgba(170, 140, 240, 0.6);
+  color: rgba(170, 140, 240, 0.35);
   transform: rotate(-4deg);
-  font-size: 4.5rem;
+  font-size: 4rem;
   text-shadow: 1px 1px 1px rgba(100, 70, 140, .3);
+  transition: color 1s;
+}
+#logo:hover {
+  color: rgba(170, 140, 240, 0.8);
+  cursor: default;
 }
 
 .circle-btn {
   display: inline-block;
-  height: 90px;
-  width: 90px;
+  height: 78px;
+  width: 78px;
   border-radius: 50%;
   margin: 1.5rem;
 }
@@ -38,7 +44,7 @@ header {
 }
 .circle-btn h5 {
   color: rgba(250, 248, 252, .8);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin: 20% 25%;
   font-family: 'Indie Flower', cursive;
   text-align: center;
@@ -56,4 +62,58 @@ header {
 }
 .login-btn:hover {
   background-color: rgba(215, 232, 153, .6);
+}
+
+.msg {
+  background-color: rgba(40,41,42,.4);
+  color: rgb(201,200,201);
+  border: 1px solid rgb(120,120,120);
+  border-radius: 20px;
+}
+.msg h6 {
+  margin-top: 0;
+  padding: .25rem;
+  line-height: 1.5rem;
+}
+#sampler {
+  background-color: rgba(30, 32, 34,.7);
+  padding: .5rem 5%;
+  border: 5px solid rgba(90, 85, 95, .9);
+  border-radius: 28px;
+  box-shadow: 2px -6px 12px rgb(35,35,35);
+}
+.sampler-row {
+  margin: .75rem;
+}
+.sampler-module {
+  width: 100%;
+  background-color: rgba(70, 70, 75,.9);
+  color: rgb(215,215,215);
+  height: 10rem;
+  border: 4px solid rgba(30,32,34,.7);
+  text-align: center;
+}
+.mod-btn {
+  height: 65%;
+  width: 65%;
+  margin: 6% 20%;
+  background-color: rgba(150, 160, 200, .2);
+  border: 2px solid rgb(125, 125, 140);
+  border-radius: 50%;
+}
+.modtxt {
+  margin-top: 17%;
+  font-size: 2.5rem;
+  color: rgba(15,15,15,.45);
+}
+.mod-clr {
+  height: 17%;
+  width: 17%;
+  margin-left: 2%;
+  background-color: rgba(200, 195, 150, .2);
+  border-radius: 40%;
+}
+.clrtxt {
+  padding-top: 12%;
+  color: rgba(15,15,15, .45);
 }
