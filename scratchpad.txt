@@ -1,0 +1,24 @@
+BACKLOG
+
+- Record audio
+  - Active/Inactive classes on record button
+- Let user choose where audio will go
+  - On record, grab select.val from dropdown
+- Correctly route audio
+  - Maybe each module should already have a hidden <audio> element, just modify its source.
+- Keyboard listeners on modules
+  - Quick spike on keypress event to determine keycodes
+- Clear module
+- Click listeners on modules
+- Color animation on modules
+- Recording/playback optimization
+  - Don't want to hear button click, playing the 'instrument' needs to feel good.
+
+IF ALL OF THE ABOVE IS HAPPENING...
+
+- Before going through the authentication process, see if you can actually save the recordings to Db.
+- If yes, do the users thing.
+
+IF NO TIME
+
+- Lose the user buttons!
