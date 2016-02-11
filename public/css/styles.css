@@ -111,9 +111,11 @@ header {
 .rec-active {
   box-shadow: 0 0 6px 6px rgb(231, 107, 107);
   background-color: rgb(176, 11, 11);
+  color: rgba(15,15,15,1);
 }
 .rec-active:hover {
   background-color: rgb(176, 11, 11);
+  color: rgba(15,15,15,1);
 }
 .rectxt {
   padding-top: 5%;
