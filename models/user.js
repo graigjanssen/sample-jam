@@ -19,7 +19,7 @@ var UserSchema = mongoose.Schema({
   samples: [SampleSchema],
 });
 
-UserSchame.pre('save', function(next){
+UserSchema.pre('save', function(next){
   if (this.isModified('password')) {
     this.password = bcrypt.hashSync(this.password, 10);
   }
