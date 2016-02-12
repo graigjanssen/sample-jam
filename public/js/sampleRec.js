@@ -19,7 +19,9 @@ function newRecording(){
 
 function setRecListener(){
   $('.rec-btn').click(function(){
-    newRecording();
+    setTimeout(function(){
+      newRecording();
+    }, 200);
   });
 }
 

@@ -15,6 +15,7 @@ XXX Clear module
 - Color animation on modules
 - Recording/playback optimization
   - Don't want to hear button click, playing the 'instrument' needs to feel good.
+  - Can keypress interrupt playback and play again?  This would make it waaaay more fun to play.
 
 IF ALL OF THE ABOVE IS HAPPENING...
 

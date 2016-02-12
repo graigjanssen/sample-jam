@@ -9,7 +9,9 @@ var keyMap = {
   59:  '#mod8'
 };
 function triggerSampler(samplerModule){
-  $(samplerModule).get(0).play();
+  var audio = $(samplerModule).get(0);
+  audio.load();
+  audio.play();
 }
 
 function setKeyboardListener(){
