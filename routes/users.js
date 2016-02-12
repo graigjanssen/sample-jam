@@ -2,8 +2,16 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
-// GET CURRENT //
+// GET ALL (in case I want to check what's up at /users) //
+
 router.get('/', function(req, res){
+  User.find({}, function(err, dbUsers){
+    res.json({users: dbUsers});
+  });
+});
+
+// GET CURRENT //
+router.get('/current', function(req, res){
   if (req.user){
     res.json ({user: req.user});
   } else {
