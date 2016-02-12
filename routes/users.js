@@ -46,4 +46,5 @@ router.post('/samples', function(req, res){
     res.json(dbUser);
   });
 });
+
 module.exports = router;
