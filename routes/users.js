@@ -23,18 +23,20 @@ router.get('/current', function(req, res){
 router.post('/', function(req, res){
   var newUser = new User(req.body.user);
   newUser.save(function(err, dbUser){
-    res.json(dbUser);
+    if (err) {
+      res.json({description: 'invalid'});
+    } else {
+      res.json(dbUser);
+    }
   });
 });
 // LOG IN //
 router.post('/authenticate', function(req, res){
   User.findOne({username: req.body.username}, function(err, dbUser){
     if (dbUser) {
-      console.log('Found user: ', dbUser);
       dbUser.authenticate(req.body.password, function(err, isMatch){
         if (isMatch) {
           dbUser.setToken(err, function(){
-            console.log('Just set the toke, heres the user:', dbUser);
             res.json(dbUser);
           });
         } else {
@@ -42,7 +44,6 @@ router.post('/authenticate', function(req, res){
         }
       });
     } else {
-      console.log('Did not find dbUser');
       res.json({description: 'invalid'});
     }
   });

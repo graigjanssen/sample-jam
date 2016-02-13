@@ -92,9 +92,14 @@ header {
 #login {
   display: none;
 }
-.usermgr-heading {
+.usermgr-heading,
+#signup-success-msg {
   padding-top: 1.5rem;
 }
+#signup-success h6 {
+  text-align: center;
+}
+
 .close-modal {
   float: right;
   color: black;
@@ -102,6 +107,12 @@ header {
   font-weight: bold;
   cursor: pointer;
   transform: translateX(12px);
+}
+.signup-error,
+.login-error {
+  display: none;
+  text-align: center;
+  color: rgb(210, 57, 57);
 }
 .usermgr-btn {
   width: 90%;

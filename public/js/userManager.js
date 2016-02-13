@@ -1,13 +1,18 @@
 // MODAL HANDLING //
 
 function setUserModalHandler(){
-  $('.circle-btn').click(function(e){
+  $('.to-modal').click(function(e){
     // Will return 'signup-btn' or 'login-btn'
     var btnClass = e.currentTarget.classList[1];
     $('.modal').css('display', 'block');
     if (btnClass === "signup-btn"){
+      $('#signup-success').hide();
       $('#signup').show();
     } else if (btnClass === "login-btn"){
+      $('#signup-success').hide();
+      $('#login').show();
+    } else if (btnClass === "to-login"){
+      $('#signup-success').hide();
       $('#login').show();
     }
   });
@@ -19,6 +24,7 @@ function setModalCloseListener(){
       $('.modal').hide();
       // Reset User Forms //
       $('#signup').hide();
+      $('#signup-success').hide();
       $('#login').hide();
     });
 }
@@ -38,7 +44,6 @@ function createUser(userData, callback){
 
 function setSignupFormHandler(){
   $('#signup-form').on('submit', function(e){
-    console.log('sign up form beeeyotch!');
     e.preventDefault();
 
     var usernameField = $(this).find('input[name=username]');
@@ -52,9 +57,21 @@ function setSignupFormHandler(){
     var userData = {username: usernameText, password: passwordText};
 
     createUser(userData, function(response){
-      console.log(response);
+      renderSignupMessage(response);
     });
   });
+}
+
+function renderSignupMessage(response){
+  var username = response.username;
+  if (response.description === 'invalid'){
+    $('.signup-error').show();
+  } else {
+    $('.signup-error').hide();
+    $('#signup').hide();
+    $('#signup-success').show();
+    $('#signup-success-msg').text('Welcome, ' + username + '!');
+  }
 }
 
 // USER LOGIN //
@@ -84,7 +101,12 @@ function setLoginFormHandler() {
 
     var userData = {username: usernameText, password: passwordText};
     login(userData, function(response){
-      console.log(response);
+      if (response.description === "invalid") {
+        $('.login-error').show();
+      } else {
+        $('.login-error').hide();
+      }
+      $.cookie('token', response.token);
     });
 
   });
