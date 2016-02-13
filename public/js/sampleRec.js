@@ -7,18 +7,18 @@ function sendToSampler(){
 }
 
 function newRecording(){
-  $('.rec-btn').removeClass('rec-inactive').addClass('rec-active');
+  $('#sample-rec').removeClass('rec-inactive').addClass('rec-active');
   audioRecorder.clear();
   audioRecorder.record();
   setTimeout(function(){
-    $('.rec-btn').removeClass('rec-active').addClass('rec-inactive');
+    $('#sample-rec').removeClass('rec-active').addClass('rec-inactive');
     audioRecorder.stop();
     sendToSampler();
   }, 1000);
 }
 
 function setRecListener(){
-  $('.rec-btn').click(function(){
+  $('#sample-rec').click(function(){
     setTimeout(function(){
       newRecording();
     }, 200);
