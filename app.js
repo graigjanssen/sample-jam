@@ -18,6 +18,9 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
+var loadUser = require('./middleware/loadUser');
+app.use(loadUser);
+
 // DATABASE //
 
 var dbPath = 'mongodb://localhost/sample-jam';

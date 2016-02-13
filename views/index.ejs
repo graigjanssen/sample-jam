@@ -7,8 +7,14 @@
 
   <header>
     <h1 id="logo">sample*jam</h1>
-    <div class="to-modal signup-btn circle-btn"><h5>Sign Up</h5></div>
-    <div class="to-modal login-btn circle-btn"><h5>Log In</h5></div>
+    <div class="logged-out">
+      <div class="to-modal signup-btn circle-btn"><h5>Sign Up</h5></div>
+      <div class="to-modal login-btn circle-btn"><h5>Log In</h5></div>
+    </div>
+    <div class="logged-in">
+      <div class="user-status"><h5 class="user-status-msg"></h5></div>
+      <div class="circle-btn logout-btn"><h5>Log Out</h5></div>
+    </div>
   </header>
 
   <% include partials/user-manager.html %>

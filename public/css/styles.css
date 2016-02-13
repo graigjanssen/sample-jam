@@ -63,8 +63,24 @@ header {
 .login-btn:hover {
   background-color: rgba(215, 232, 153, .6);
 }
+.logout-btn {
+  background-color: rgba(232, 165, 153, 0.2);
+  transition: background-color .35s;
+}
+.logout-btn:hover {
+  background-color: rgba(232, 165, 153, .6);
+}
+.user-status {
+  display: inline-block;
+}
+.user-status-msg {
+  color: rgba(200,200,200,.8);
+}
 
   /* MODAL / USER MANAGER */
+.logged-in {
+  display: none;
+}
 .modal {
   display: none;
   position: fixed;
