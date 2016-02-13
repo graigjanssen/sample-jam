@@ -57,8 +57,42 @@ function setSignupFormHandler(){
   });
 }
 
+// USER LOGIN //
+
+function login(userData, callback){
+  $.ajax({
+    method: 'post',
+    url: '/users/authenticate',
+    data: userData,
+    success: function(data){
+      callback(data);
+    }
+  });
+}
+
+function setLoginFormHandler() {
+  $('#login').on('submit', function(e){
+    e.preventDefault();
+
+    var usernameField = $(this).find('input[name=username]');
+    var usernameText = usernameField.val();
+    usernameField.val('');
+
+    var passwordField = $(this).find('input[name=password]');
+    var passwordText = passwordField.val();
+    passwordField.val('');
+
+    var userData = {username: usernameText, password: passwordText};
+    login(userData, function(response){
+      console.log(response);
+    });
+
+  });
+}
+// ON PAGE LOAD //
 $(function(){
   setUserModalHandler();
   setModalCloseListener();
   setSignupFormHandler();
+  setLoginFormHandler();
 });

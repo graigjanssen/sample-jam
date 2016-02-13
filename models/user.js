@@ -16,7 +16,8 @@ var SampleSchema = mongoose.Schema({
 var UserSchema = mongoose.Schema({
   username: {type: String},
   password: {type: String},
-  samples: [SampleSchema],
+  token: {type: String},
+  samples: [SampleSchema]
 });
 
 UserSchema.pre('save', function(next){
