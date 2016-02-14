@@ -9,7 +9,8 @@ var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null,
-    recIndex = 0;
+    recIndex = 0,
+    samplerRecorder = null;
 
 // Enable User's Mic //
 function initAudio() {
@@ -49,6 +50,18 @@ function gotStream(stream) {
   zeroGain.connect( audioContext.destination );
 }
 
+// ~~~ SAMPLER OUTPUT RECORDING SETUP ~~~ //
+
+function initSamplerOutput(){
+  var htmlAudioElements = $('.mod-audio');
+  var merger = audioContext.createChannelMerger(8);
+  for (var i = 0; i < htmlAudioElements.length; i++) {
+    audioContext.createMediaElementSource(htmlAudioElements[i]).connect(merger, 0, i);
+  }
+  samplerRecorder = new Recorder( merger );
+}
+
 $(function(){
   initAudio();
+  initSamplerOutput();
 });
