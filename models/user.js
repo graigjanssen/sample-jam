@@ -2,22 +2,18 @@ var mongoose  = require('mongoose'),
     bcrypt    = require('bcryptjs'),
     crypto    = require('crypto');
 
-var SampleSchema = mongoose.Schema({
-  mod1: {type: String},
-  mod2: {type: String},
-  mod3: {type: String},
-  mod4: {type: String},
-  mod5: {type: String},
-  mod6: {type: String},
-  mod7: {type: String},
-  mod8: {type: String}
+var JamSchema = mongoose.Schema({
+  name: {type: String},
+  type: {type: String},
+  size: {type: Number},
+  file: {type: Array}
 });
 
 var UserSchema = mongoose.Schema({
   username: {type: String},
   password: {type: String},
   token: {type: String},
-  samples: [SampleSchema]
+  jams: [JamSchema]
 });
 
 UserSchema.pre('save', function(next){

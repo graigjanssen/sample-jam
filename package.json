@@ -25,6 +25,7 @@
     "express": "^4.13.4",
     "kerberos": "0.0.18",
     "mongoose": "^4.4.2",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0"
   }
 }

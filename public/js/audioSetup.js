@@ -56,8 +56,11 @@ function initSamplerOutput(){
   var htmlAudioElements = $('.mod-audio');
   var merger = audioContext.createChannelMerger(8);
   for (var i = 0; i < htmlAudioElements.length; i++) {
-    audioContext.createMediaElementSource(htmlAudioElements[i]).connect(merger, 0, i);
+    audioContext.createMediaElementSource(htmlAudioElements[i]).connect(merger);
   }
+  var toSpeakers = audioContext.createGain();
+  merger.connect(toSpeakers);
+  toSpeakers.connect(audioContext.destination);
   samplerRecorder = new Recorder( merger );
 }
 

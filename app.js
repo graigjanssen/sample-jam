@@ -3,8 +3,9 @@
 var express     = require('express'),
     morgan      = require('morgan'),
     mongoose    = require('mongoose'),
-    bodyParser  = require('body-parser');
+    bodyParser  = require('body-parser'),
     cookieParser = require('cookie-parser');
+
 var app = express();
 
 app.set('view engine', 'ejs');
