@@ -1,7 +1,34 @@
+var WavReader = {
+  read: function(file, callback){
+    var reader = new FileReader();
+
+    var fileInfo = {
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      file: null
+    };
+
+    reader.onload = function(){
+      fileInfo.file = reader.result;
+      callback(null, fileInfo);
+    };
+
+    reader.onerror = function(){
+      callback(reader.error);
+    };
+
+    reader.readAsDataURL(file);
+  }
+};
 function sendToSampler(){
+  var samplerModule = $('#mod-menu').val();
   audioRecorder.exportWAV(function(blob){
+    blob.name = samplerModule;
+    WavReader.read(blob, function(err, fileInfo){
+      console.log('fileInfo from WavReader', fileInfo);
+    });
     var url = URL.createObjectURL(blob);
-    var samplerModule = $('#mod-menu').val();
     $(samplerModule).attr('src', url);
   });
 }

@@ -262,6 +262,6 @@ header {
 .save-row {
   margin-top: 2rem;
 }
-.save-btn {
-  width: 100%;
+.saveload-btns {
+  text-align: center;
 }

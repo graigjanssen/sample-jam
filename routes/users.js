@@ -49,11 +49,12 @@ router.post('/authenticate', function(req, res){
   });
 });
 
-// SAVE JAM //
-router.post('/jams', function(req, res){
+// SAVE SAMPLES //
+router.post('/samples', function(req, res){
   var currentUser = req.user;
-  var jamToSave = req.body;
-  currentUser.samples.push(jamToSave);
+  var samplesToSave = req.body;
+  console.log('samples to save: ', samplesToSave);
+  currentUser.samples = samplesToSave;
   currentUser.save(function(err, dbUser){
     res.json(dbUser);
   });
