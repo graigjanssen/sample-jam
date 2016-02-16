@@ -4,8 +4,6 @@ var WavReader = {
 
     var fileInfo = {
       name: file.name,
-      type: file.type,
-      size: file.size,
       file: null
     };
 
@@ -44,20 +42,13 @@ function createHiddenFields(fileInfo){
     type: 'hidden',
     name: 'name'
   }).val(fileInfo.name);
-  var $type = $('<input>').attr({
-    type: 'hidden',
-    name: 'type'
-  }).val(fileInfo.type);
-  var $size = $('<input>').attr({
-    type: 'hidden',
-    name: 'size'
-  }).val(fileInfo.size);
+
   var $file = $('<input>').attr({
     type: 'hidden',
     name: 'file'
   }).val(fileInfo.file);
 
-  return $form.append([$name, $type, $size, $file]);
+  return $form.append([$name, $file]);
 }
 
 function newRecording(){

@@ -4,8 +4,6 @@ var mongoose  = require('mongoose'),
 
 var SampleSchema = mongoose.Schema({
   name: {type: String},
-  type: {type: String},
-  size: {type: Number},
   file: {type: String}
 });
 

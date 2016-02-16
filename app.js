@@ -17,28 +17,6 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 
 app.use(express.static('./public'));
-    // FILE UPLOAD //
-// app.use(busboy());
-// app.use(fileUpload());
-//
-// app.post('/upload', function(req, res) {
-// 	var sampleFile;
-//   console.log(req);
-// 	if (!req.files) {
-// 		res.send('No files were uploaded.');
-// 		return;
-// 	}
-//
-// 	sampleFile = req.files.fileInfo;
-// 	sampleFile.mv('/users/jams', function(err) {
-// 		if (err) {
-// 			res.status(500).send(err);
-// 		}
-// 		else {
-// 			res.send('File uploaded!');
-// 		}
-// 	});
-// });
 
 app.use(bodyParser.urlencoded({
   extended: false,
