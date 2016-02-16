@@ -1,8 +1,9 @@
 function setSaveHandler(){
   $('#save-samples').click(function(){
+    // Get all 8 module audio elements //
     var samplerModules = $('.mod-audio');
     var samplesToSave = [];
-
+    // If an element has a child (hidden form), add object to samples array //
     for (var i = 0; i < samplerModules.length; i++) {
       if (samplerModules[i].childElementCount > 0) {
         var $form = $(samplerModules[i].firstChild);
@@ -12,7 +13,20 @@ function setSaveHandler(){
         samplesToSave.push(fileObject);
       }
     }
-    console.log('Sampies to Savesky: ', samplesToSave);
+    // Save samples array //
+    saveSamples(samplesToSave);
+  });
+}
+
+function saveSamples(samplesToSave){
+  console.log(samplesToSave);
+  $.ajax({
+    method: 'post',
+    url: '/users/samples',
+    data: {samples: samplesToSave},
+    success: function(data){
+      console.log(data);
+    }
   });
 }
 

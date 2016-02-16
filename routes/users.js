@@ -21,7 +21,7 @@ router.get('/current', function(req, res){
 
 // CREATE NEW //
 router.post('/', function(req, res){
-  var newUser = new User(req.body.user);
+  var newUser = new User(req.body);
   newUser.save(function(err, dbUser){
     if (err) {
       res.json({description: 'invalid'});
@@ -50,10 +50,10 @@ router.post('/authenticate', function(req, res){
 });
 
 // SAVE SAMPLES //
+  // Expecting an array of 8 sample objects containing info and base64 strings representing audio data //
 router.post('/samples', function(req, res){
   var currentUser = req.user;
-  var samplesToSave = req.body;
-  console.log('samples to save: ', samplesToSave);
+  var samplesToSave = req.body.samples;
   currentUser.samples = samplesToSave;
   currentUser.save(function(err, dbUser){
     res.json(dbUser);

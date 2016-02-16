@@ -61,7 +61,7 @@ function createUser(userData, callback){
   $.ajax({
     method: 'post',
     url: '/users',
-    data: {user: userData},
+    data: userData,
     success: function(data){
       callback(data);
     }

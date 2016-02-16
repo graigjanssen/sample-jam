@@ -19,11 +19,11 @@ app.use(morgan('dev'));
 app.use(express.static('./public'));
 
 app.use(bodyParser.urlencoded({
-  extended: false,
+  extended: true,
   parameterLimit: 10000,
   limit: '50mb'}));
 app.use(bodyParser.json({
-  extended: false,
+  extended: true,
   limit: '50mb',
   parameterLimit: 10000
 }));
