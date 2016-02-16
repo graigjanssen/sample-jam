@@ -1,3 +1,5 @@
+// SAVE SAMPLES //
+
 function setSaveHandler(){
   $('#save-samples').click(function(){
     // Get all 8 module audio elements //
@@ -19,7 +21,6 @@ function setSaveHandler(){
 }
 
 function saveSamples(samplesToSave){
-  console.log(samplesToSave);
   $.ajax({
     method: 'post',
     url: '/users/samples',
@@ -30,6 +31,34 @@ function saveSamples(samplesToSave){
   });
 }
 
+  // LOAD SAMPLES //
+
+function setLoadHandler(){
+  $('#load-samples').click(function(){
+    getUserSamples(function(userSamples){
+      loadSamples(userSamples);
+    });
+  });
+}
+
+function loadSamples(userSamples){
+  for (var i = 0; i < userSamples.length; i++) {
+    var $mod = $(userSamples[i].name);
+    $mod.attr('src', userSamples[i].file);
+  }
+}
+
+function getUserSamples(callback){
+  $.ajax({
+    method: 'get',
+    url: '/users/samples',
+    success: function(data){
+      callback(data);
+    }
+  });
+}
+
 $(function(){
   setSaveHandler();
+  setLoadHandler();
 });

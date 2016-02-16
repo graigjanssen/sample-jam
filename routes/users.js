@@ -60,4 +60,11 @@ router.post('/samples', function(req, res){
   });
 });
 
+ // Get samples: called when user loads samples //
+router.get('/samples', function(req, res){
+  var currentUser = req.user;
+  var userSamples = currentUser.samples;
+  res.json(userSamples);
+});
+
 module.exports = router;
