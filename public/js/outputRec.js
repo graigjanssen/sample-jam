@@ -12,20 +12,21 @@ function appendPlaybackElement(){
   });
 }
 
-function newSamplerRecording(){
-  $('#output-rec').removeClass('rec-inactive').addClass('rec-active');
-  samplerRecorder.clear();
-  samplerRecorder.record();
-  setTimeout(function(){
-    $('#output-rec').removeClass('rec-active').addClass('rec-inactive');
+function toggleSamplerRecording(){
+  var $recBtn = $('#output-rec');
+  $recBtn.toggleClass('rec-inactive rec-active');
+  if ($recBtn.hasClass('rec-active')){
+    samplerRecorder.clear();
+    samplerRecorder.record();
+  } else {
     samplerRecorder.stop();
     appendPlaybackElement();
-  }, 2500);
+  }
 }
 
 function setOutputRecListener(){
   $('#output-rec').click(function(){
-    newSamplerRecording();
+    toggleSamplerRecording();
   });
 }
 

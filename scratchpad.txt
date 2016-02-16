@@ -1,5 +1,13 @@
 BACKLOG
 
+BY TONIGHT
+
+XXX Jam Recording Toggle Mode
+- Download Links for Jams
+- Info tags for save/load buttons
+- Module Buttons have color when audio is present
+- Module Buttons change color when triggered
+
 XXX Record audio
   XXX Active/Inactive classes on record button
 XXX Let user choose where audio will go
