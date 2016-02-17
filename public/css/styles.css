@@ -259,9 +259,56 @@ header {
   padding-top: 12%;
   color: rgba(15,15,15, .45);
 }
+
+ /* JAM RECORDING SECTION */
+.help-text {
+  margin-bottom: 0;
+  text-align: center;
+  color: rgb(165,165,165);
+  font-size: .85rem;
+}
 .save-row {
   margin-top: 2rem;
 }
 .saveload-btns {
   text-align: center;
+}
+#output-rec {
+  width: 55%;
+  margin: 2.5% 21.5%;
+}
+#save-samples {
+  background-color: rgb(37, 7, 136);
+  border-radius: 8px;
+}
+#save-samples:hover {
+  background-color: rgb(186, 84, 69);
+}
+#load-samples {
+  background-color: rgb(69, 10, 84);
+  border-radius: 8px;
+}
+#load-samples:hover {
+  background-color: rgb(186, 84, 69);
+}
+.playlist-item {
+  margin: 1.75rem;
+  display: flex;
+  align-content: center;
+}
+
+.playlist-audio {
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+.download-btn {
+  background-color: rgb(7, 66, 87);
+  border-radius: 4px;
+}
+.download-btn:hover {
+  background-color: rgb(186, 84, 69);
+}
+.download-btn:disabled {
+  background-color: rgb(7, 66, 87);
 }

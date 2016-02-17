@@ -3,7 +3,8 @@ BACKLOG
 BY TONIGHT
 
 XXX Jam Recording Toggle Mode
-- Download Links for Jams
+XXX Download Links for Jams
+- Style for Jams section
 - Info tags for save/load buttons
 - Module Buttons have color when audio is present
 - Module Buttons change color when triggered
