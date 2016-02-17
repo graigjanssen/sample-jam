@@ -148,8 +148,17 @@ function handleLogin(response){
 function setLogoutHandler(){
   $('.logout-btn').click(function(){
     $.removeCookie('token');
+    clearSamples();
+    updateSamplerStyle();
     updateView();
   });
+}
+
+function clearSamples(){
+  var $audioMods = $('.mod-audio');
+  for (var i = 0; i < $audioMods.length; i++) {
+    $($audioMods[i]).attr('src', '');
+  }
 }
 // ON PAGE LOAD //
 $(function(){
