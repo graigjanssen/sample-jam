@@ -10,10 +10,19 @@ var keyMap = {
 };
 function triggerSampler(samplerModule){
   var audio = $(samplerModule).get(0);
+  var $modBtn = $(audio.parentElement);
   audio.load();
   audio.play();
+
+  lightUp($modBtn);
 }
 
+function lightUp($button){
+  $button.addClass('lit-up');
+  setTimeout(function(){
+    $button.removeClass('lit-up');
+  }, 150);
+}
 function setKeyboardListener(){
   $(window).on('keypress', function(e){
     var keyCode = e.keyCode;
