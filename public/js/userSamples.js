@@ -37,6 +37,7 @@ function setLoadHandler(){
   $('#load-samples').click(function(){
     getUserSamples(function(userSamples){
       loadSamples(userSamples);
+      updateSamplerStyle();
     });
   });
 }

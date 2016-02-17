@@ -4,9 +4,8 @@ BY TONIGHT
 
 XXX Jam Recording Toggle Mode
 XXX Download Links for Jams
-- Style for Jams section
-- Info tags for save/load buttons
-- Module Buttons have color when audio is present
+XXX Style for Jams section
+XXX Module Buttons have color when audio is present
 - Module Buttons change color when triggered
 
 XXX Record audio

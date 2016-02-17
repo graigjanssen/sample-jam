@@ -26,10 +26,25 @@ function setClearListener(){
   $('.mod-clr').click(function(e){
     var $moduleAudio = $(e.currentTarget.previousElementSibling.firstElementChild);
     $moduleAudio.attr('src', '');
+    updateSamplerStyle();
   });
+}
+
+function updateSamplerStyle(){
+  var modBtns = $('.mod-btn');
+  for (var i = 0; i < modBtns.length; i++) {
+    var $modAudio = $(modBtns[i].firstElementChild);
+    var src = $modAudio.attr('src');
+    if (src){
+      $(modBtns[i]).removeClass('no-audio').addClass('has-audio');
+    } else {
+      $(modBtns[i]).removeClass('has-audio').addClass('no-audio');
+    }
+  }
 }
 
 $(function(){
   setKeyboardListener();
   setClearListener();
+  updateSamplerStyle();
 });

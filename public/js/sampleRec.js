@@ -28,11 +28,16 @@ function sendToSampler(){
     $(samplerModule).empty();
     $(samplerModule).attr('src', url);
 
+    // Workaround for proper sampler styling //
+    var $modBtn = $($(samplerModule).get(0).parentElement);
+    $modBtn.removeClass('no-audio').addClass('has-audio');
+
     // Get object with file info including base64 string of audio data, append as hidden fields //
     WavReader.read(blob, function(err, fileInfo){
       $(samplerModule).append(createHiddenFields(fileInfo));
     });
   });
+
 }
 
 function createHiddenFields(fileInfo){
@@ -67,6 +72,7 @@ function setRecListener(){
     setTimeout(function(){
       newRecording();
     }, 200);
+    updateSamplerStyle();
   });
 }
 
