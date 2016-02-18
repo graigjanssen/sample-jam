@@ -26,7 +26,21 @@ function saveSamples(samplesToSave){
     url: '/users/samples',
     data: {samples: samplesToSave},
     success: function(data){
-      console.log(data);
+      if (data.description) {
+        $('#save-msg-box').show();
+        $('#save-msg').text('Error Saving Samples');
+        setTimeout(function(){
+          $('#save-msg-box').hide();
+          $('#save-msg').text('');
+        }, 5000);
+      } else {
+        $('#save-msg-box').show();
+        $('#save-msg').text('Samples Saved!');
+        setTimeout(function(){
+          $('#save-msg-box').hide();
+          $('#save-msg').text('');
+        }, 5000);
+      }
     }
   });
 }

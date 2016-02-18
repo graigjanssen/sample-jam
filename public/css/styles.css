@@ -280,6 +280,16 @@ header {
   color: rgb(165,165,165);
   font-size: .85rem;
 }
+#save-msg-box {
+  display: none;
+}
+#save-msg {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(65,65,65,.75);
+  border-radius: 8px;
+  color: rgb(200,200,200);
+}
 .save-row {
   margin-top: 2rem;
 }

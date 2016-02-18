@@ -56,6 +56,9 @@ router.post('/samples', function(req, res){
   var samplesToSave = req.body.samples;
   currentUser.samples = samplesToSave;
   currentUser.save(function(err, dbUser){
+    if (err) {
+      res.json({description: 'Error Saving Samples'});
+    }
     res.json(dbUser);
   });
 });
