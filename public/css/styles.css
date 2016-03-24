@@ -236,6 +236,7 @@ header {
   border: 2px solid rgb(125, 125, 140);
   border-radius: 50%;
   transition: background-color .17s;
+  cursor: pointer;
 }
 .mod-btn:active .lit-up {
   background-color: rgb(230, 226, 143);

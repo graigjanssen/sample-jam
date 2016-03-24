@@ -1,4 +1,4 @@
-  // TO DO: Add download link to each element, improve appearance //
+
 function appendPlaybackElement(){
   samplerRecorder.exportWAV(function(blob){
     var url = URL.createObjectURL(blob);

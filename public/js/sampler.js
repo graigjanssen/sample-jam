@@ -31,6 +31,14 @@ function setKeyboardListener(){
     }
   });
 }
+
+function setMouseListener(){
+  $('.mod-btn').click(function(e){
+    var audioId = '#' + e.currentTarget.firstElementChild.id;
+    triggerSampler(audioId);
+  });
+}
+
 function setClearListener(){
   $('.mod-clr').click(function(e){
     var $moduleAudio = $(e.currentTarget.previousElementSibling.firstElementChild);
@@ -54,6 +62,7 @@ function updateSamplerStyle(){
 
 $(function(){
   setKeyboardListener();
+  setMouseListener();
   setClearListener();
   updateSamplerStyle();
 });
