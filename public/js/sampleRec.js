@@ -69,6 +69,7 @@ function newRecording(){
 
 function setRecListener(){
   $('#sample-rec').click(function(){
+    audioContext.resume();
     setTimeout(function(){
       newRecording();
     }, 200);

@@ -35,7 +35,9 @@ app.use(loadUser);
 // DATABASE //
 
 var dbPath = 'mongodb://localhost/sample-jam';
-mongoose.connect(process.env.MONGOLAB_URI || dbPath);
+mongoose.connect(process.env.MONGOLAB_URI || dbPath, {
+  useMongoClient: true
+});
 
 // ROUTING //
 
