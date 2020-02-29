@@ -69,7 +69,7 @@ function newRecording(){
 
 function setRecListener(){
   $('#sample-rec').click(function(){
-    audioContext.resume();
+    audioContext.resume(); // Fixes Chrome bug that prevented recording
     setTimeout(function(){
       newRecording();
     }, 200);
